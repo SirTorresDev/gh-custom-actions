@@ -1,5 +1,9 @@
 name: 'Cached Dependencies'
 description: 'An action to cache dependencies for faster workflow runs'
+inputs:
+  caching:
+    description: 'Enable caching of dependencies'
+    
 runs:
   using: 'composite'
   steps:
