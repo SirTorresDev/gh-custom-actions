@@ -5,6 +5,11 @@ inputs:
     description: 'Enable caching of dependencies'
     required: false
     default: 'true'
+outputs:
+  used-cache:
+    description: 'Indicates whether the cache was used'
+    value: ${{ steps.cache.outputs.cache-hit }}
+
 runs:
   using: 'composite'
   steps:
