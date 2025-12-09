@@ -82,10 +82,3 @@ jobs:
           s3-bucket: 'gha-custom-action-hosting-8913'
           region: 'eu-north-1'
           dist-folder: './dist'
-  information:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Get code
-          uses: actions/checkout@v3
-        - name: Run custom action
-          uses: ./.github/actions/deploy-s3-javascript
