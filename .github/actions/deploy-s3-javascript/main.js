@@ -1,13 +1,21 @@
-const github = require('@actions/github');
 const core = require('@actions/core');
 const exec = require('@actions/exec');
-const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3');
-const fs = require('fs');
-const path = require('path');
+
 
 function run() {
+    // 1) Get some inputs values
     core.notice('Starting S3 deployment action...');
+    const bucket = core.getInput('s3-bucket', { required: true });
+    const region = core.getInput('region', { required: true });
+    const distFolder = core.getInput('dist-folder', { required: true });
 
+
+    // 2) Upload files to S3
+    const s3uri = `s3://${bucket}`;
+    
+    exec.exec(`aws s3 sync ${distFolder} ${s3uri} --region ${region}`);
+
+    core.notice('S3 deployment action completed.');
 
 }
 

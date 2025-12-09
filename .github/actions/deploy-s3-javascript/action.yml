@@ -1,5 +1,22 @@
 name: 'Deploy to S3 JavaScript Action'
 description: 'An action to deploy built JavaScript site to S3'
+inputs:
+  s3-bucket:
+    description: 'The name of the S3 bucket to deploy to'
+    required: true
+  aws-access-key-id:
+    description: 'AWS Access Key ID'
+    required: true
+  aws-secret-access-key:
+    description: 'AWS Secret Access Key'
+    required: true
+  region:
+    description: 'AWS Region'
+    required: false
+    default: 'us-east-1'
+  dist-folder:
+    description: 'The folder containing the built site to deploy'
+    required: true
 runs:
   using: 'node16'
   main: 'main.js'
