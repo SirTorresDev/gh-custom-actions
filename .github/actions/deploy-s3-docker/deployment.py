@@ -9,7 +9,6 @@ def run():
     bucket = os.environ['INPUT_S3_BUCKET']
     bucket_region = os.environ['INPUT_REGION']
     dist_folder = os.environ['INPUT_DIST_FOLDER']
-
     configuration = Config(region_name=bucket_region)
 
     s3_client = boto3.client('s3', config=configuration)
