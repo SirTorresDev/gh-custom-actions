@@ -82,3 +82,6 @@ jobs:
           s3-bucket: 'gha-custom-action-hosting-8913'
           region: 'eu-north-1'
           dist-folder: './dist'
+      - name: Deployment complete
+        run: |
+         echo "Live URL: ${{ steps.deploy.outputs.website-url }}"

@@ -4,12 +4,6 @@ inputs:
   s3-bucket:
     description: 'The name of the S3 bucket to deploy to'
     required: true
-  aws-access-key-id:
-    description: 'AWS Access Key ID'
-    required: true
-  aws-secret-access-key:
-    description: 'AWS Secret Access Key'
-    required: true
   region:
     description: 'AWS Region'
     required: false
@@ -17,6 +11,9 @@ inputs:
   dist-folder:
     description: 'The folder containing the built site to deploy'
     required: true
+outputs:
+  website-url:
+    description: 'The URL of the deployed website'
 runs:
   using: 'node16'
   main: 'main.js'

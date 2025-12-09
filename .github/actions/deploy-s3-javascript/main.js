@@ -12,9 +12,11 @@ function run() {
 
     // 2) Upload files to S3
     const s3uri = `s3://${bucket}`;
-    
+
     exec.exec(`aws s3 sync ${distFolder} ${s3uri} --region ${region}`);
 
+    const websiteUrl = `http://${bucket}.s3-website.${region}.amazonaws.com`;
+    core.setOutput('website-url', websiteUrl);
     core.notice('S3 deployment action completed.');
 
 }
