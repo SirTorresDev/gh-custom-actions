@@ -1,14 +1,14 @@
 name: Deploy to AWS S3 using Docker
 description: Deploys built files to an AWS S3 bucket using a Docker container.
 inputs:
-  s3-bucket:
+  s3_bucket:
     description: 'The name of the S3 bucket to deploy to'
     required: true
   region:
     description: 'AWS Region'
     required: false
     default: 'us-east-1'
-  dist-folder:
+  dist_folder:
     description: 'The folder containing the built site to deploy'
     required: true
 outputs:
