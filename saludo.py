@@ -1,2 +1,2 @@
 print ("Este es un archivo ejecutado en python")
-prunt ("Hola Mundo desde Python")
+print ("Hola Mundo desde Python")
